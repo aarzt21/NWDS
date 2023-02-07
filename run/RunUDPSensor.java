@@ -13,6 +13,6 @@ public class RunUDPSensor {
 
         String address = args[0]; String port = args[1]; // Parse args
         UDPSensor udp_sensor = new UDPSensor(address, port); // Instantiate new UDP Sensor
-        udp_sensor.run(100); // And run it
+        udp_sensor.run(500); // And run it
     }
 }
