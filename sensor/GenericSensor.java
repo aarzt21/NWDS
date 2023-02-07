@@ -11,6 +11,7 @@ package sensor;
 
 import common.MessageInfo;
 
+import java.math.BigDecimal;
 import java.util.Random;
 
 public abstract class GenericSensor implements Sensor {
@@ -57,7 +58,7 @@ public abstract class GenericSensor implements Sensor {
   public float getMeasurement() {
     Random r = new Random();
     measurement = r.nextFloat() * (max_measure - min_measure) + min_measure;
-
-    return measurement;
+    float r_measurement = BigDecimal.valueOf(measurement).setScale(2,BigDecimal.ROUND_HALF_DOWN).floatValue();
+    return r_measurement;
   }
 }
